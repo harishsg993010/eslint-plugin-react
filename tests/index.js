@@ -153,7 +153,7 @@ describe('configurations', () => {
     });
 
     ruleFiles.forEach((ruleName) => {
-      const inRecommendedConfig = !!plugin.configs[configName].rules[`react/${ruleName}`];
+      const inRecommendedConfig = Boolean(plugin.configs[configName].rules[`react/${ruleName}`]);
       const isRecommended = plugin.rules[ruleName].meta.docs[configName];
       if (inRecommendedConfig) {
         assert(isRecommended, `${ruleName} metadata should mark it as recommended`);
